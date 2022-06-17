@@ -1,0 +1,71 @@
+@charset 'UTF-8';
+/* Slider */
+
+/* Icons */
+
+/* Arrows */
+
+.slick-prev{
+    left: 30px;
+    font-size: 0;
+    line-height: 0;
+
+    position: absolute;
+    top: 50%;
+
+    display: block;
+
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+
+    cursor: pointer;
+
+    width: 30px;
+    height: 60px;
+    opacity: .5;
+    border-radius: 15px;
+    background-color: #fff;
+    font-size: 16px;
+    z-index: 10;
+    border: none;
+    outline: none;
+    justify-content: center;
+    align-items: center;
+    content: "<";
+    color: transparent;
+}
+.slick-next{
+    right: 20px;
+    font-size: 0;
+    line-height: 0;
+
+    position: absolute;
+    top: 50%;
+
+    display: block;
+
+    
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+
+    cursor: pointer;
+
+    width: 30px;
+    height: 60px;
+    opacity: .5;
+    border-radius: 15px;
+    background-color: #fff;
+    font-size: 16px;
+    z-index: 10;
+    border: none;
+    outline: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.slick-prev:hover,
+.slick-next:hover{
+    transform: scale(1);
+}

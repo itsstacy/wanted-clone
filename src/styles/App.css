@@ -1,3 +1,178 @@
+
+
+
+/* ROOT */
+
+:root {
+--primary-color: #0482F7;
+--grey-color:#666;
+--background-color: #f8f4f1;
+--text-color: #454545;
+
+--container-width: 1060px;
+--container-width-1100: 950px;
+--navbar-width: 1060px;
+}
+
+/* ROOT END */
+
+
+/* GOOGLE MATERIAL ICONS */
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    /* url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+    url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+    url(https://example.com/MaterialIcons-Regular.ttf) format('truetype'); */
+}
+
+* {
+  font-family: 'GowunDodum-Regular';
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 30px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  padding: 3px;
+  cursor: pointer;
+  color: grey;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+/* GOOGLE MATERIAL ICONS END */
+
+/* NAVBAR */
+
+.mainbar {
+  margin: 0 auto;
+  height: 50px;
+  box-shadow: 0 1px 0 0 rgb(0 0 0 / 10%);
+  z-index: 800;
+}
+
+.mainbar-nav {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 50px;
+  width: var(--navbar-width);
+  margin: 0 auto;
+}
+
+.mainbar-nav-box {
+  margin: 0 10px;
+  height: inherit;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.mainbar-nav-box>span {
+  color: black;
+  font-size: 25px;
+  font-weight: 400;
+  margin-right: 8px;
+}
+
+.main-logo {
+  height: 21px;
+}
+
+.navbar-menu {
+  display: inline-block;
+  cursor: pointer;
+  color: var(--text-color);
+
+  position: relative;
+  vertical-align: middle;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  padding: 15px;
+  display: inline-block;
+}
+
+.navbar-menu:hover {
+  box-shadow: inset 0 -2px #258bf7;
+}
+
+.void {
+  width: 400px;
+}
+
+.divider {
+  display: block;
+  content: "";
+  width: 1px;
+  height: 15px;
+  background-color: #e1e2e3;
+  margin: auto 10px;
+}
+.button-company-service{
+  font-size: 13px;
+  color: #666;
+  line-height: 30px;
+  height: 30px;
+  border: 1px solid #e1e2e3;
+  border-radius: 15px;
+  padding: 0 10px;
+  margin-left: 15px;
+  font-weight: 400;
+}
+
+/* NAVBAR END */
+
+/* MAIN */
+.main-container{
+  max-width: var(--container-width);
+  margin: 20px auto;
+}
+
+.heading{
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: normal;
+  align-items: center;
+}
+
+.logoai {
+  height: 20px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+
+/* MAIN END */
+
 /* Signup Page */
 .signup-wrap {
   min-width: 800px;
