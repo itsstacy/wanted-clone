@@ -14,21 +14,46 @@ import banner8 from "../assets/banner8.webp";
 
 function Carousels() {
 
+  function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "block", background: "transparent" }}
+        onClick={onClick}
+      />
+    );
+  }
+  function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "block", background: "transparent" }}
+        onClick={onClick}
+      />
+    );
+  }
+
   let settings = {
     dots: false,
     infinite: true,
-    speed: 300,
+    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
     autoplay: true,
-    autoplaySpeed: 10000,
+    autoplaySpeed: 3500,
     centerMode: true,
     variableWidth: true,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />
+    
   };
 
   return (
     <Slider {...settings}>
+
       <div className="banner">
         <img src= {banner1}/>
       </div>
@@ -49,6 +74,9 @@ function Carousels() {
       </div>
       <div className="banner">
         <img src= {banner7}/>
+      </div>
+      <div className="banner">
+        <img src= {banner8}/>
       </div>
     </Slider>
   )

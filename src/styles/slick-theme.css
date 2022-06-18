@@ -5,10 +5,9 @@
 
 /* Arrows */
 
+.slick-prev:before,
 .slick-prev{
-    left: 30px;
-    font-size: 0;
-    line-height: 0;
+    left: 18%;
 
     position: absolute;
     top: 50%;
@@ -18,11 +17,9 @@
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
     transform: translate(0, -50%);
-
     cursor: pointer;
-
-    width: 30px;
-    height: 60px;
+    width: 24px;
+    height: 45px;
     opacity: .5;
     border-radius: 15px;
     background-color: #fff;
@@ -32,28 +29,25 @@
     outline: none;
     justify-content: center;
     align-items: center;
-    content: "<";
-    color: transparent;
+    content: "<" !important;
+    font-size: 1.2rem;
+    padding-top: 12px;
+    padding-left: 9px;
 }
+.slick-next:before,
+.slick-next:after,
 .slick-next{
-    right: 20px;
-    font-size: 0;
-    line-height: 0;
-
+    content: ">" !important;
+    right: 18%;
     position: absolute;
     top: 50%;
-
-    display: block;
-
-    
+    display: block;  
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
     transform: translate(0, -50%);
-
     cursor: pointer;
-
-    width: 30px;
-    height: 60px;
+    width: 24px;
+    height: 45px;
     opacity: .5;
     border-radius: 15px;
     background-color: #fff;
@@ -63,9 +57,8 @@
     outline: none;
     justify-content: center;
     align-items: center;
+    font-size: 1.2rem;
+    padding-top: 12px;
+    padding-left: 9px;
 }
 
-.slick-prev:hover,
-.slick-next:hover{
-    transform: scale(1);
-}
