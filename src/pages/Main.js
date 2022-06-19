@@ -6,9 +6,15 @@ import company1 from '../assets/company1.png';
 import company2 from '../assets/company2.png';
 import company3 from '../assets/company3.png';
 import examplelogo from '../assets/examplelogo.png';
+import axios from 'axios';
 
 function Main() {
-    
+  axios.get(`http://13.209.35.101:3000/api/posting`,{})
+  .then((response) => {
+    console.log(response.data);
+  });
+ 
+
   return (
     <div className="mainpage">
       <Carousels/>
