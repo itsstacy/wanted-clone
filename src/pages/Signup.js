@@ -2,6 +2,7 @@ import "../styles/App.css";
 import React from "react";
 import S3 from "react-aws-s3";
 import { useNavigate, useLocation } from "react-router-dom";
+import axios from "axios";
 
 window.Buffer = window.Buffer || require("buffer").Buffer;
 
@@ -25,6 +26,7 @@ function Signup() {
     accessKeyId: process.env.REACT_APP_ACCESS_S,
     secretAccessKey: process.env.REACT_APP_SECRET_S,
   };
+  console.log(config);
 
   // profile img 업로드
   const IMG_PATH_ref = React.useRef();
@@ -55,7 +57,40 @@ function Signup() {
         console.error(err);
       });
   };
-  console.log(IMG_PATH_ref);
+
+  const navigate = useNavigate();
+  const userid = React.useRef();
+  const password = React.useRef();
+  const confirmpassword = React.useRef();
+  const username = React.useRef();
+
+  function LoginPost() {
+    axios({
+      method: "post",
+      url: "http://13.209.35.101:3000/api/users/signup",
+      data: {
+        userid: userid.current.value,
+        password: password.current.value,
+        confirmpassword: confirmpassword.current.value,
+        username: username.current.value,
+        profileimage: uploadFileURL,
+        position: selected,
+      },
+    })
+      .then((res) => {
+        console.log(res);
+        // if (res.data.result === true) {
+        //   alert("회원 가입이 완료되었습니다!");
+        //   navigate("/login");
+        // } else {
+        //   alert(res.data.errorMessage);
+        // }
+      })
+      .catch((err) => {
+        console.log(err);
+        console.log(err.config.data);
+      });
+  }
 
   return (
     <div>
@@ -64,7 +99,7 @@ function Signup() {
           <h2 className="signup-title">회원 가입</h2>
           <div className="signup-msg-slider"></div>
           <div className="signup-main">
-            <form className="signup-form">
+            <div className="signup-form">
               <div className="signup-input">
                 <label for="position" className="form-label">
                   포지션
@@ -90,6 +125,7 @@ function Signup() {
                   className="signup-input-form"
                   type="email"
                   placeholder="example@naver.com"
+                  ref={userid}
                 />
                 <span></span>
               </div>
@@ -102,6 +138,7 @@ function Signup() {
                   className="upload-name"
                   placeholder="Add the file"
                   ref={IMG_PATH_ref}
+                  disabled
                 />
                 <input
                   id="file"
@@ -121,6 +158,7 @@ function Signup() {
                   className="signup-input-form"
                   type="text"
                   placeholder="user"
+                  ref={username}
                 />
                 <span></span>
               </div>
@@ -133,6 +171,7 @@ function Signup() {
                   className="signup-input-form"
                   type="password"
                   placeholder="****"
+                  ref={password}
                 />
                 <span></span>
               </div>
@@ -145,17 +184,20 @@ function Signup() {
                   className="signup-input-form"
                   type="password"
                   placeholder="****"
+                  ref={confirmpassword}
                 />
                 <span></span>
               </div>
-              <button className="signup-btn">가입하기</button>
+              <button className="signup-btn" onClick={LoginPost}>
+                가입하기
+              </button>
               <div className="signup-footer">
                 <span>
                   가입 시, 4조가 제공하는 서비스를 모두이용하실 수 있습니다.
                   개인정보취급방침에 동의합니다.
                 </span>
               </div>
-            </form>
+            </div>
             <div></div>
           </div>
         </div>
