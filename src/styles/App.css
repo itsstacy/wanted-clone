@@ -199,7 +199,9 @@
 .job-card{
   width: 265px;
   height: 360px;
+  cursor: pointer;
 }
+
 .card-text-wrap{
   padding: 12px;
 }
@@ -296,7 +298,7 @@
   margin: 5px auto;
 }
 .wrap {
-  width: 150px;
+  width: 250px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -375,7 +377,7 @@
   font-size: 15px;
   text-align: left;
   word-break: break-word;
-  width: 100%;
+  width: 50%;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;

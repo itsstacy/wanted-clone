@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styled from 'styled-components';
 import S3 from 'react-aws-s3';
+import {createJob} from '../redux/modules/feedSlice';
 
 window.Buffer = window.Buffer || require("buffer").Buffer;
 
@@ -19,7 +20,7 @@ function Newjob() {
       inputFile.current.click();
   };
 
-  //file upload to storage & show preview
+  //file upload to S3 storage & show preview
   const [selectedFile, setSelectedFile] = useState(null);
 
   const config = {
@@ -39,7 +40,6 @@ function Newjob() {
 
 const uploadFile = async (file) => {
     const ReactS3Client = new S3(config);
-    // the name of the file uploaded is used to upload it to S3
     ReactS3Client
     .uploadFile(file, file.name)
     .then((data) => {
@@ -54,6 +54,22 @@ const uploadFile = async (file) => {
   console.log(file);
   console.log(selectedFile);
 
+  //job data ref
+  const _title = React.useRef(null);
+  const _subcontent = React.useRef(null);
+  const _maincontent = React.useRef(null);
+
+
+  const newpost = () => {
+    dispatchEvent(createJob({
+      title: _title.current.value,
+      thumbnail: file? file: "https://www.incimages.com/uploaded_files/image/1920x1080/getty_175138996_97986.jpg",
+      maincontent: _maincontent.current.value,
+      subcontent: _subcontent.current.value,
+      position: position,
+    }))
+  }
+
   return (
     <div className="newjob-container">
       <div className = "detailhead topmg40">
@@ -65,7 +81,7 @@ const uploadFile = async (file) => {
       <div className="newjob-head">
         공고제목
       </div>
-      <input type="text" className="newjob-input topmg10"></input>
+      <input type="text" className="newjob-input topmg10" ref={_title}></input>
       <div className="newjob-head">
         썸네일 등록
       </div>
@@ -92,13 +108,17 @@ const uploadFile = async (file) => {
       <div className="newjob-head">
         주요업무
       </div>
-      <textarea className="newjob-inputarea"></textarea>
+      <textarea className="newjob-inputarea" ref={_maincontent}></textarea>
       <div className="newjob-head">
         자격요건
       </div>
-      <textarea className="newjob-inputarea"></textarea>
+      <textarea className="newjob-inputarea" ref={_subcontent}></textarea>
       <div className="flex-center">
-       <button className="newjob-register-button"> 등록하기 </button>
+       <button 
+       className="newjob-register-button" 
+       onClick={()=>{
+         newpost()
+       }}> 등록하기 </button>
       </div>
     </div>
     
