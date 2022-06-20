@@ -557,15 +557,19 @@
 
 /* DETAIL - COMPANY - END */
 
-/* Signup Page */
+/* Signup / Login Page */
 .signup-wrap {
   min-width: 800px;
   /* background: green; */
 }
 .signup {
-  margin: 64px auto auto;
+  margin: 64px auto ;
   width: 320px;
-  height: 676px;
+  /* height: 676px; */
+}
+.signup-company {
+  margin: 64px auto ;
+  width: 640px;
 }
 .signup-title {
   text-align: center;
@@ -599,12 +603,20 @@
   padding: 13px 12px;
   font-size: 15px;
   margin-top: 10px;
+  border: 1px solid #dee2e6;
+}
+.signup-position:focus {
+  outline: 1px solid #00c471;
 }
 .signup-input-form {
   margin-top: 10px;
   padding: 13px 12px;
   height: 24px;
   font-size: 15px;
+  border: 1px solid #dee2e6;
+}
+.signup-input-form:focus {
+  outline: 1px solid #00c471;
 }
 
 .signup-btn {
@@ -619,6 +631,34 @@
   font-weight: 700;
   cursor: pointer;
 }
+.signup-btn-company{
+  border-color: #36f;
+  background-color: #36f;
+  margin-top: 16px;
+  margin-bottom: 12px;
+  border: 1px solid;
+  color: #fff;
+  height: 48px;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.login-to-signup {
+  display: flex;
+  justify-content: center;
+}
+.login-to-signup > span{
+  text-align: center;
+  line-height: 1.38;
+  letter-spacing: -.3px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #616568;
+  border-bottom: 1px solid #858a8d;
+  cursor: pointer;
+  margin-left: 10px;
+}
 .signup-footer {
   line-height: 1.5;
   letter-spacing: -.3px;
@@ -627,7 +667,10 @@
   margin-bottom: 6px;
   color: #858a8d;
 }
-
+.upload-name {
+  border: none;
+}
+/* Signup / Login End */
 
 
 /* FOOTER */
