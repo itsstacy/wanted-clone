@@ -38,10 +38,12 @@ function Main() {
         <div className="joblist">
           {Joblist.map((job,idx)=>{
             return(
-              <div className="job-card">
-                <img src={defaultjob} className="job-img"/>
+              <div className="job-card" onClick={()=>{
+                navigate(`/detail`, { state: {job} });
+              }}>
+                <img src={job.thumbnail? job.thumbnail:defaultjob} className="job-img"/>
                 <div className="card-text-wrap">
-                  <div className="cardhead">{job.maincontent}</div>
+                  <div className="cardhead">{job.title}</div>
                   <div className="card-company">{job.companyname}</div>
                   <div className="card-location">서울.한국</div>
                   <div className="normal-text">{job.position === "1" ? "프론트엔드" : "백엔드"}</div>
