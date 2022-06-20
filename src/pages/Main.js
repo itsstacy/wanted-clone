@@ -1,19 +1,30 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
 import Carousels from '../elements/Carousels';
 import logoai from '../assets/logo_ai.png';
 import defaultjob from '../assets/defaultjob.png';
+
 import company1 from '../assets/company1.png';
 import company2 from '../assets/company2.png';
 import company3 from '../assets/company3.png';
 import examplelogo from '../assets/examplelogo.png';
-import axios from 'axios';
+
+import {getAllLists} from '../redux/modules/feedSlice';
+
 
 function Main() {
-  axios.get(`http://13.209.35.101:3000/api/posting`,{})
-  .then((response) => {
-    console.log(response.data);
-  });
- 
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const Joblist = useSelector((state)=> state.Feed);
+  console.log(Joblist[1]);
+
+  useEffect(() => {
+   dispatch(getAllLists());
+  })
 
   return (
     <div className="mainpage">
