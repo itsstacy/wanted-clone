@@ -1,10 +1,13 @@
-
+*{
+  margin: 0;
+}
 
 
 /* ROOT */
 
 :root {
 --primary-color: #0482F7;
+--secondary-color: #04a6f7;
 --grey-color:rgb(130, 130, 130);
 --background-color: #f8f4f1;
 --text-color: #454545;
@@ -463,6 +466,7 @@
 .newjob-container {
   max-width: var(--detail-width);
   margin: 30px auto;
+  padding: 10px;
   font-size: 1rem;
 }
 
@@ -483,9 +487,9 @@
 }
 
 .newjob-input{
-  width: 100%;
+  width: 96%;
   outline: none;
-  border: 1px solid var(--box-border);
+  border: 2px solid var(--box-border);
   height: 30px;
   margin: 10px auto;
   padding: 5px 10px 5px 10px;
@@ -493,9 +497,9 @@
 }
 
 .newjob-inputarea{
-  width: 100%;
+  width: 96%;
   outline: none;
-  border: 1px solid var(--box-border);
+  border: 2px solid var(--box-border);
   height: 200px;
   margin: 10px auto;
   padding: 10px;
@@ -506,7 +510,7 @@
 .newjob-inputarea:focus,
 .newjob-input:hover,
 .newjob-inputarea:hover{
-  border: 1px solid var(--primary-color);
+  border: 2px solid var(--primary-color);
 }
 
 .button-wrap{
@@ -514,7 +518,36 @@
   width: 100%;
   justify-content: space-around;
   display: flex;
-  gap:20px;
+  gap:5px;
+}
+
+.newjob-file {
+  display: none !important;
+}
+
+.newjob-preview {
+  display: block;
+  width: 98.5%;
+  max-height: 250px;
+  object-fit: cover;
+  margin:20px auto 20px auto; 
+}
+.newjob-register-button{
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #36f;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: normal;
+  color: #fff;
+  text-align: center;
+  border: none;
+  margin: 60px auto;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
 }
 
 /* NEW JOB - END */
