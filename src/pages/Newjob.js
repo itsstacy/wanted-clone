@@ -1,12 +1,16 @@
 import React, { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
-import S3 from "react-aws-s3";
+import styled from 'styled-components';
+import S3 from 'react-aws-s3';
+import {createJob} from '../redux/modules/feedSlice';
 
 window.Buffer = window.Buffer || require("buffer").Buffer;
 
 function Newjob() {
+
+  const dispatch = useDispatch();
+
   const navigate = useNavigate();
 
   const [position, setPosition] = useState(0);
@@ -19,7 +23,7 @@ function Newjob() {
     inputFile.current.click();
   };
 
-  //file upload to storage & show preview
+  //file upload to S3 storage & show preview
   const [selectedFile, setSelectedFile] = useState(null);
 
   const config = {
@@ -37,7 +41,7 @@ function Newjob() {
       const length = e.target.files.length;
       console.log(length);
       uploadFile(e.target.files[0]);
-
+    }}
       const uploadFile = async (file) => {
         const ReactS3Client = new S3(config);
         // the name of the file uploaded is used to upload it to S3
@@ -68,9 +72,29 @@ function Newjob() {
       })
       .catch((err) => console.error(err));
   };
-
   console.log(file);
   console.log(selectedFile);
+
+  //get token
+  const access_token = localStorage.getItem("token");
+  console.log(access_token);
+
+  //job data ref
+  const _title = React.useRef(null);
+  const _subcontent = React.useRef(null);
+  const _maincontent = React.useRef(null);
+
+
+  const newpost = () => {
+    dispatch(createJob({
+      title: _title.current.value,
+      thumbnail: file? file: "https://www.incimages.com/uploaded_files/image/1920x1080/getty_175138996_97986.jpg",
+      maincontent: _maincontent.current.value,
+      subcontent: _subcontent.current.value,
+      position: position,
+      token: access_token
+    }))
+  }
 
   return (
     <div className="newjob-container">
@@ -91,6 +115,16 @@ function Newjob() {
         onChange={(e) => {
           handleFileInput(e);
         }}
+
+      <input type="text" className="newjob-input topmg10" ref={_title}></input>
+      <div className="newjob-head">
+        썸네일 등록
+      </div>
+      <Filebutton display={display} onClick={onButtonClick}><span className="material-icons">add_a_photo</span></Filebutton>
+      <input className='newjob-file' type="file" ref={inputFile} 
+          onChange={(e) => {
+              handleFileInput(e)
+          }}
       ></input>
       <img src={file} className="newjob-preview" />
       <div className="newjob-head">구분</div>
@@ -117,11 +151,17 @@ function Newjob() {
         </Button2>
       </div>
       <div className="newjob-head">주요업무</div>
-      <textarea className="newjob-inputarea"></textarea>
-      <div className="newjob-head">자격요건</div>
-      <textarea className="newjob-inputarea"></textarea>
+      <textarea className="newjob-inputarea" ref={_maincontent}></textarea>
+      <div className="newjob-head">
+        자격요건
+      </div>
+      <textarea className="newjob-inputarea" ref={_subcontent}></textarea>
       <div className="flex-center">
-        <button className="newjob-register-button"> 등록하기 </button>
+       <button 
+       className="newjob-register-button" 
+       onClick={()=>{
+         newpost()
+       }}> 등록하기 </button>
       </div>
     </div>
   );
