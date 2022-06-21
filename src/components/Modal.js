@@ -4,6 +4,7 @@ import DaumPostcode from "react-daum-postcode";
 
 const Modal = (props) => {
   // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴
+  const [fullAddressData, setFullAddressData] = React.useState(2);
   const { open, close, header } = props;
 
   //회사 주소(다음 API)
@@ -18,9 +19,13 @@ const Modal = (props) => {
         extraAddress +=
           extraAddress !== "" ? `, ${data.buildingName}` : data.buildingName;
       }
+
       fullAddress += extraAddress !== "" ? ` (${extraAddress})` : "";
     }
     //fullAddress -> 전체 주소반환
+    console.log(fullAddress);
+    props.addressData(fullAddress);
+    close();
   };
 
   return (
