@@ -49,17 +49,17 @@ function Detail() {
         <div className="divider"></div>
         <div className="detail-location">{Job.region}, {Job.country}</div>
       </div>
-      <div className="detail-content topmg30">
+      <p className="detail-content topmg30">
       {Job.intro}
-      </div>
+      </p>
       <div className="content-header topmg30"> 주요업무 </div>
-      <div className="detail-content topmg10 ">
+      <p className="detail-content topmg10 ">
       {Job.maincontent}
-      </div>
+      </p>
       <div className="content-header topmg30"> 자격요건 </div>
-      <div className="detail-content topmg10 ">
+      <p className="detail-content topmg10 ">
       {Job.subcontent}
-      </div>
+      </p>
       <div className="detail-divider"></div>
       <div className='wrap2'>
         <div className="content-header-grey">마감일</div>

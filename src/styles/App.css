@@ -371,6 +371,7 @@
 }
 .detail-content {
   line-height: 1.7rem;
+  white-space: pre-wrap;
 }
 
 .detail-company {

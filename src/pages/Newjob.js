@@ -8,7 +8,7 @@ import {createJob} from '../redux/modules/feedSlice';
 window.Buffer = window.Buffer || require("buffer").Buffer;
 
 function Newjob() {
-
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const [position, setPosition] = useState(0);
@@ -39,7 +39,7 @@ function Newjob() {
       const length = e.target.files.length;
       console.log(length);
       uploadFile(e.target.files[0]);
-
+    }}
       const uploadFile = async (file) => {
         const ReactS3Client = new S3(config);
         // the name of the file uploaded is used to upload it to S3
@@ -52,82 +52,13 @@ function Newjob() {
           })
           .catch((err) => console.error(err));
       };
-    }
-
-    return (
-      <div className="newjob-container">
-        <div className="detailhead topmg40">채용공고를 등록해주세요.</div>
-        <div className="newjob-text-grey topmg10">
-          채용 정보를 정확하게 입력할수록 알맞은 인재를 찾을 확률이 올라갑니다!
-        </div>
-        <div className="newjob-head">공고제목</div>
-        <input type="text" className="newjob-input topmg10"></input>
-        <div className="newjob-head">썸네일 등록</div>
-        <Button display={display} onClick={onButtonClick}>
-          <span className="material-icons color-primary topmg20">
-            add_a_photo
-          </span>
-        </Button>
-        <input
-          className="file"
-          type="file"
-          multiple
-          ref={inputFile}
-          onChange={(e) => {
-            handleFileInput(e);
-          }}
-        ></input>
-
-        <div className="newjob-head">구분</div>
-        <div className="button-wrap">
-          <Button
-            position={position}
-            onClick={() => {
-              setPosition(1);
-              console.log(position);
-            }}
-          >
-            {" "}
-            Front-end{" "}
-          </Button>
-          <Button2
-            position={position}
-            onClick={() => {
-              setPosition(-1);
-              console.log(position);
-            }}
-          >
-            {" "}
-            Back-end{" "}
-          </Button2>
-        </div>
-        <div className="newjob-head">주요업무</div>
-        <textarea className="newjob-inputarea"></textarea>
-        <div className="newjob-head">자격요건</div>
-        <textarea className="newjob-inputarea"></textarea>
-      </div>
-    );
-  };
-}
-        uploadFile(e.target.files[0]);
-    };
-}
-
-const uploadFile = async (file) => {
-    const ReactS3Client = new S3(config);
-    ReactS3Client
-    .uploadFile(file, file.name)
-    .then((data) => {
-        console.log(data.location);
-        setFile(data.location);
-        setSelectedFile(data.location);
-        setDisplay(false);
-    })
-    .catch(err => console.error(err))
-}
-
+    
   console.log(file);
   console.log(selectedFile);
+
+  //get token
+  const access_token = localStorage.getItem("token");
+  console.log(access_token);
 
   //job data ref
   const _title = React.useRef(null);
@@ -136,12 +67,13 @@ const uploadFile = async (file) => {
 
 
   const newpost = () => {
-    dispatchEvent(createJob({
+    dispatch(createJob({
       title: _title.current.value,
       thumbnail: file? file: "https://www.incimages.com/uploaded_files/image/1920x1080/getty_175138996_97986.jpg",
       maincontent: _maincontent.current.value,
       subcontent: _subcontent.current.value,
       position: position,
+      token: access_token
     }))
   }
 

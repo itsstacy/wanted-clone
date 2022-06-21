@@ -62,13 +62,13 @@ function Main() {
           {Companylist.map((company,idx)=>{
             return(
               <div className="main-company-card">
-                <img src={company1} className="main-company-img"/>
+                <img src={company.image? company.image[0] : company1} className="main-company-img"/>
                 <div className="main-company-description">
                   <div className="wrap">
-                    <img src={examplelogo} className="main-company-logo"/>
+                    <img src={company.profileimage? company.profileimage : examplelogo} className="main-company-logo"/>
                     <div className="card-text-wrap2">
                       <div className="cardhead">{company.companyname}</div>
-                      <div className="card-industry">IT,컨텐츠</div>
+                      <div className="card-industry">{company.industry}</div>
                     </div>
                   </div>
                   <button className="button-follow">팔로우</button>

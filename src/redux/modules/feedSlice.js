@@ -13,15 +13,24 @@ export const getAllLists = createAsyncThunk("GET/getAllLists", async () => {
 
 //CREATE JOB POSTING
 export const createJob = createAsyncThunk("POST/postings", async (Job) => { 
-  console.log(Job);
-  
-  // await axios
-  // .post(`${SERVER_URL}/postings`,{})
-  // .then((response) => {
-  //   console.log(response);
-  // });
+  const jobData = {
+    title: Job.title,
+    thumbnail: Job.thumbnail,
+    maincontent: Job.maincontent,
+    subcontent: Job.subcontent,
+    position: Job.position,
+  }
+  console.log(jobData);
+  console.log(Job.token);
+  await axios
+  .post(`${SERVER_URL}/postings`,jobData, {
+    headers: {Authorization: `Bearer ${Job.token}`},
+  })
+  .then((response) => {
+    console.log(response);
+  });
 
-  // return 
+  return jobData;
 })
  
 
@@ -54,7 +63,14 @@ extraReducers: {
     console.log("GET REJECTED");
   },
 
-
+  [createJob.fulfilled]: (state, action) => {
+    console.log("POST FULFILLED");
+    console.log(action.payload);
+    console.log(state.joblist);
+  },
+  [createJob.rejected]: (state, action) => {
+    console.log("POST REJECTED");
+  },
 
 
   }
