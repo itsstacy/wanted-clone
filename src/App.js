@@ -10,6 +10,7 @@ import Newjob from "./pages/Newjob";
 import Login from "./pages/Login";
 import Signupcompany from "./pages/Signupcompany";
 import Detailcompany from "./pages/Detailcompany";
+import Community from "./pages/Community";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signupcompany" element={<Signupcompany />} />
           <Route path="/detailcompany" element={<Detailcompany />} />
+          <Route path="/community" element={<Community />} />
         </Routes>
       </div>
       <Footer />

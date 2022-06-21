@@ -27,7 +27,7 @@ function Navbar() {
           <div 
           className="navbar-menu"
           onClick={() => {
-            navigate("/join");
+            navigate("/community");
           }}>커뮤니티</div>
           <div className="void"></div>
         </div>
