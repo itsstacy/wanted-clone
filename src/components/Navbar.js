@@ -46,7 +46,7 @@ function Navbar() {
               <div
                 className="navbar-menu"
                 onClick={() => {
-                  navigate("/join");
+                  navigate("/community");
                 }}
               >
                 커뮤니티
@@ -95,7 +95,7 @@ function Navbar() {
               <div
                 className="navbar-menu"
                 onClick={() => {
-                  navigate("/join");
+                  navigate("/community");
                 }}
               >
                 커뮤니티
@@ -150,7 +150,7 @@ function Navbar() {
               <div
                 className="navbar-menu"
                 onClick={() => {
-                  navigate("/join");
+                  navigate("/community");
                 }}
               >
                 커뮤니티
