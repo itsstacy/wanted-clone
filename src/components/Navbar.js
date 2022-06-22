@@ -65,7 +65,11 @@ function Navbar() {
               </div>
 
               <div className="divider"></div>
-              <button className="button-company-service">기업서비스</button>
+              <button 
+              className="button-company-service"
+              onClick={()=>{
+                navigate("/login");
+              }}>기업서비스</button>
             </div>
           </div>
         </div>
