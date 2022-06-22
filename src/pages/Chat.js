@@ -30,7 +30,7 @@ function Chat({ socket, username, room, emoji, profileimage}) {
   };
 
   useEffect(() => {
-    const SERVER_URL = "http://3.36.74.108/api";
+    const SERVER_URL = "http://hayeon-sum.shop/api";
     // const access_token = localStorage.getItem("token");
     // console.log(access_token);
 

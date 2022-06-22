@@ -248,7 +248,7 @@ function Signupcompany() {
   function signupPost() {
     axios({
       method: "post",
-      url: "http://13.209.35.101:3000/api/users/companies/signup",
+      url: "http://hayeon-sum.shop/api/users/companies/signup",
       data: {
         userid: userid.current.value,
         password: password.current.value,

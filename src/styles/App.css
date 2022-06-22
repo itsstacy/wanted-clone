@@ -11,7 +11,7 @@
 --primary-darker: #006bee;
 --primary-light:#c6e4ff;
 --grey-color:rgb(130, 130, 130);
---background-color: #f8f4f1;
+--background-color: #f8f8f8;
 --text-color: #454545;
 --light-grey: #a0a0a0;
 --light-light-grey: #bbbbbb;
@@ -146,7 +146,6 @@
 .button-company-service{
   font-size: 13px;
   color: #666;
-  line-height: 30px;
   height: 30px;
   border: 1px solid #e1e2e3;
   border-radius: 15px;
@@ -172,7 +171,7 @@
   letter-spacing: normal;
   align-items: center;
   text-align: center;
-  margin: 20px auto;
+  margin: 30px auto 40px auto;
 }
 
 .logoai {
@@ -192,7 +191,30 @@
 
 .banner {
   margin: 0 12px;
+  position: relative;
 }
+
+.banner-box {
+  z-index:1000;
+  position: absolute;
+  bottom: 28px;
+  width: 280px;
+  height: 60px;
+  border-radius: 4px;
+  background-color: #fff;
+  text-align: left;
+  left: 50px;
+  opacity: 90%;
+  padding: 17px;
+  display: inline-block;
+}
+
+.banner-box p {
+  margin-top: 5px;
+  font-size: 0.85rem;
+  color: var(--grey-color);
+}
+
 .joblist {
   display: flex;
   flex-direction: row;
@@ -211,6 +233,9 @@
 }
 .card-text-wrap2{
   padding: 3px;
+}
+.card-text-wrap3{
+  padding: 8px;
 }
 
 .cardhead {
@@ -1138,6 +1163,125 @@
 /* CHAT AREA END */
 /* COMMUNITY END */
 
+
+/* COMPANY - MYPAGE */
+.mypage-container{
+  background-color: var(--background-color);
+}
+
+.mypage-header{
+  max-width: var(--container-width);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  margin: 0px auto;
+}
+
+.header-block{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.block-number{
+ font-size: 2.5rem;
+ margin-top: 40px;
+}
+
+.block-text{
+  font-size: 1rem;
+  margin: 10px auto;
+}
+
+.mypage-content{
+  min-height: 100vh;
+  max-width: var(--container-width);
+  width: 100%;
+  display: flex;
+  margin: 80px auto;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* .companypage-job-card{
+  width: 248px;
+  height: 330px;
+  cursor: pointer;
+  padding: 8px !important;
+  justify-content: space-around;
+  border-radius: 5px;
+} */
+
+
+.card-wrap {
+  width: 250px;
+  height: 188px;
+  position: relative;
+}
+
+
+.companypage-job-img{
+  display: block;
+  width: 240px;
+  height: 188px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+/* 
+.companypage-job-card:hover {
+  background-color: var(--primary-light);
+} */
+
+#job-card:hover .overlay {
+  opacity: 1;
+}
+
+.overlay {
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 240px;
+  opacity: 0;
+  transition: .2s ease;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+.tag {
+  color: white;
+  font-size: 20px;
+  line-height: 23px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.tag>span {
+  color: #fff;
+  font-size: 2.2rem;
+  padding:10px;
+  cursor: pointer;
+}
+
+.tag>span:hover {
+  color: var(--primary-color);
+}
+
+.delete-text {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+
+/* COMPANY - MYPAGE END */
 
 
 /* FOOTER */

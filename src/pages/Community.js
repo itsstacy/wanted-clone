@@ -5,14 +5,14 @@ import io from "socket.io-client";
 import Chat from './Chat';
 import axios from 'axios';
 
-const socket = io.connect("http://3.36.74.108/chat");
+const socket = io.connect("http://hayeon-sum.shop/chat");
 
 function Community() {
 
   const [user, setUser] = useState([]);
   
   useEffect(() => {
-    const SERVER_URL = "http://3.36.74.108/api";
+    const SERVER_URL = "http://hayeon-sum.shop/api";
     const access_token = localStorage.getItem("token");
     console.log(access_token);
 

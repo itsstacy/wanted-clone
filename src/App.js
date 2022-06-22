@@ -11,6 +11,8 @@ import Login from "./pages/Login";
 import Signupcompany from "./pages/Signupcompany";
 import Detailcompany from "./pages/Detailcompany";
 import Community from "./pages/Community";
+import Companypage from "./pages/Companypage";
+import Edit from "./pages/Edit";
 
 function App() {
   return (
@@ -19,13 +21,15 @@ function App() {
       <div className="background">
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/detail" element={<Detail />} />
+          <Route path="/detail/" element={<Detail />} />
           <Route path="/newjob" element={<Newjob />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signupcompany" element={<Signupcompany />} />
           <Route path="/detailcompany" element={<Detailcompany />} />
           <Route path="/community" element={<Community />} />
+          <Route path="/companypage" element={<Companypage/>} />
+          <Route path="/edit" element={<Edit />} />
         </Routes>
       </div>
       <Footer />

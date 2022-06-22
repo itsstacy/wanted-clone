@@ -9,7 +9,6 @@ window.Buffer = window.Buffer || require("buffer").Buffer;
 
 function Newjob() {
   const dispatch = useDispatch();
-
   const navigate = useNavigate();
 
   const [position, setPosition] = useState(0);
@@ -80,6 +79,7 @@ function Newjob() {
         token: access_token,
       })
     );
+    navigate("/");
   };
 
   return (
@@ -89,7 +89,7 @@ function Newjob() {
         채용 정보를 정확하게 입력할수록 알맞은 인재를 찾을 확률이 올라갑니다!
       </div>
       <div className="newjob-head">공고제목</div>
-      <input type="text" className="newjob-input topmg10"></input>
+      <input type="text" className="newjob-input topmg10" ref={_title}></input>
       <div className="newjob-head">썸네일 등록</div>
       <Filebutton display={display} onClick={onButtonClick}>
         <span className="material-icons">add_a_photo</span>
