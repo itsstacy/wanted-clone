@@ -7,7 +7,7 @@
 
 .slick-prev:before,
 .slick-prev{
-    left: 18%;
+    left: 15%;
 
     position: absolute;
     top: 50%;
@@ -38,7 +38,7 @@
 .slick-next:after,
 .slick-next{
     content: ">" !important;
-    right: 18%;
+    right: 15%;
     position: absolute;
     top: 50%;
     display: block;  
