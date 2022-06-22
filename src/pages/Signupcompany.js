@@ -1,7 +1,7 @@
 import React from "react";
 import S3 from "react-aws-s3";
 //다음 주소 검색
-// import Modal from "../components/Modal";
+import Modal from "../components/Modal";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -78,22 +78,23 @@ function Signupcompany() {
     }
   };
   //주소 모달창
-  // const [modalOpen, setModalOpen] = React.useState(false);
+  const [modalOpen, setModalOpen] = React.useState(false);
 
-  // const openModal = () => {
-  //   setModalOpen(true);
-  // };
-  // const closeModal = () => {
-  //   setModalOpen(false);
-  // };
+  const openModal = () => {
+    setModalOpen(true);
+  };
+  const closeModal = () => {
+    setModalOpen(false);
+  };
 
   //국가 / 지역 / 산업군
-  const [country, setCountry] = React.useState("한국");
+  const [country, setCountry] = React.useState();
   const [region, setRegion] = React.useState([]);
   const [selectedRegion, setSelectedRegion] = React.useState();
   const [industry, setIndustry] = React.useState([]);
 
   const CountryOptions = [
+    { key: "none", value: "국가를 선택해주세요" },
     { key: 1, value: "한국" },
     { key: 2, value: "대만" },
     { key: 3, value: "싱가폴" },
@@ -102,6 +103,7 @@ function Signupcompany() {
   ];
 
   const RegionOptionsKorea = [
+    { key: "none", value: "지역을 선택해주세요" },
     { key: 1, value: "서울" },
     { key: 2, value: "부산" },
     { key: 3, value: "대구" },
@@ -122,6 +124,7 @@ function Signupcompany() {
   ];
 
   const RegionOptionsTaipei = [
+    { key: "none", value: "지역을 선택해주세요" },
     { key: 1, value: "Taipei City" },
     { key: 2, value: "New Taipei City" },
     { key: 3, value: "Taoyuan City" },
@@ -144,8 +147,12 @@ function Signupcompany() {
     { key: 20, value: "Jinmen Country" },
     { key: 21, value: "Matsu" },
   ];
-  const RegionOptionsSingapore = [{ key: 1, value: "All" }];
+  const RegionOptionsSingapore = [
+    { key: "none", value: "지역을 선택해주세요" },
+    { key: 1, value: "All" },
+  ];
   const RegionOptionsJapan = [
+    { key: "none", value: "지역을 선택해주세요" },
     { key: 1, value: "Tokyo" },
     { key: 2, value: "Kanagawa" },
     { key: 3, value: "Chiba" },
@@ -161,9 +168,13 @@ function Signupcompany() {
     { key: 13, value: "Miyagi" },
     { key: 14, value: "Etc" },
   ];
-  const RegionOptionsEtc = [{ key: 1, value: "All" }];
+  const RegionOptionsEtc = [
+    { key: "none", value: "지역을 선택해주세요" },
+    { key: 1, value: "All" },
+  ];
 
   const IndustryOptions = [
+    { key: "none", value: "산업군을 선택해주세요" },
     { key: 1, value: "IT, 컨텐츠" },
     { key: 2, value: "판매, 유통" },
     { key: 3, value: "제조" },
@@ -203,6 +214,7 @@ function Signupcompany() {
       setRegion(RegionOptionsEtc);
     }
   };
+  console.log(country);
   const handleRegion = (e) => {
     console.log(e.target.value);
     setSelectedRegion(e.target.value);
@@ -220,11 +232,23 @@ function Signupcompany() {
   const confirmpassword = React.useRef();
   const companyname = React.useRef();
   const intro = React.useRef();
-  const address = React.useRef();
+  // const address = React.useRef();
+  const [address, setAddress] = React.useState();
+  // const getAddress = (addressResult) => {
+  //   setAddress(addressResult);
+  // };
+
+  //모달에서 주소 데이터 갖고오기
+  const addressData = (data) => {
+    // console.log(data);
+    setAddress(data);
+  };
+  // console.log(address);
+
   function signupPost() {
     axios({
       method: "post",
-      url: `http://13.209.35.101:3000/api/users/companies/signup`,
+      url: "http://13.209.35.101:3000/api/users/companies/signup",
       data: {
         userid: userid.current.value,
         password: password.current.value,
@@ -233,7 +257,8 @@ function Signupcompany() {
         profileimage: uploadFileURL,
         intro: intro.current.value,
         image: array,
-        address: address.current.value,
+        // address: address.current.value,
+        address: address,
         country: country,
         region: selectedRegion,
         industry: industry,
@@ -241,12 +266,12 @@ function Signupcompany() {
     })
       .then((res) => {
         console.log(res);
-        // if (res.data.result === true) {
-        //   alert("회원 가입이 완료되었습니다!");
-        //   navigate("/login");
-        // } else {
-        //   alert(res.data.errorMessage);
-        // }
+        if (res.data.success === true) {
+          alert("회원 가입이 완료되었습니다!");
+          navigate("/login");
+        } else {
+          alert(res.data.errorMessage);
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -413,10 +438,11 @@ function Signupcompany() {
                   className="signup-input-form"
                   type="text"
                   placeholder="대표주소"
-                  ref={address}
+                  value={address}
+                  // ref={address}
                 />
                 <span></span>
-                {/* <React.Fragment>
+                <React.Fragment>
                   <button className="signup-btn-company" onClick={openModal}>
                     주소 검색
                   </button>
@@ -424,21 +450,22 @@ function Signupcompany() {
                     open={modalOpen}
                     close={closeModal}
                     header="주소 검색"
+                    addressData={addressData}
                   ></Modal>
-                </React.Fragment> */}
+                </React.Fragment>
                 <span></span>
               </div>
               <div className="signup-input">
                 <label for="profile" className="form-label">
                   회사 소개 이미지
                 </label>
-                <input
+                {/* <input
                   type="text"
                   className="upload-name"
                   placeholder="Add the file"
                   ref={IMG_PATH_ref}
                   disabled
-                />
+                /> */}
                 <input
                   id="file"
                   className="signup-input-form"
