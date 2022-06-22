@@ -666,7 +666,7 @@
 .signup-btn-company{
   /* border-color: #fff; */
   background-color: #fff;
-  margin-top: 16px;
+  margin-top: 10px;
   margin-bottom: 12px;
   border: 1px solid eee;
   color: black;
@@ -1118,7 +1118,7 @@
   width: auto;
   height: auto;
   min-height: 40px;
-  max-width: 120px;
+  min-width: 120px;
   background-color: var(--primary-light);
   border-radius: 5px;
   color:#333;
@@ -1127,8 +1127,8 @@
   align-items: center;
   margin-right: 5px;
   margin-left: 5px;
-  padding-right: 5px;
-  padding-left: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
   overflow-wrap: break-word;
   word-break: break-word;
   justify-content: flex-start;
