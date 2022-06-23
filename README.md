@@ -32,7 +32,7 @@
 <details markdown="1">
 <summary>구현 화면</summary>
 
-![서비스 아키텍처 (1)]()
+[https://www.notion.so/4-e1ca3a0316e4459d80cc08793e2d1556]
 </details>
 
 <details markdown="2">
