@@ -77,7 +77,7 @@ export const expireJob = createAsyncThunk("PATCH/expireJob", async (data)=>{
   }
 
   await axios
-  .patch(`${SERVER_URL}/postings/${data.postingid}`,expireJobData, {
+  .patch(`${SERVER_URL}/postings/status/${data.postingid}`,expireJobData, {
     headers: {Authorization: `Bearer ${data.token}`},
   })
   .then((response) => {

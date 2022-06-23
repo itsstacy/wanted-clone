@@ -34,8 +34,6 @@ function Chat({ socket, username, room, emoji, profileimage }) {
   useEffect(() => {
     setRealtime([]);
     const SERVER_URL = "http://hayeon-sum.shop/api";
-    // const access_token = localStorage.getItem("token");
-    // console.log(access_token);
 
     axios.get(`${SERVER_URL}/chat/lists`, {}).then((response) => {
       console.log(response);

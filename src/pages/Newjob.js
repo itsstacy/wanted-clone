@@ -79,6 +79,7 @@ function Newjob() {
         token: access_token,
       })
     );
+    alert("채용공고 등록이 완료되었어요!");
     navigate("/");
   };
 

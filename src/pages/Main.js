@@ -82,7 +82,9 @@ function Main() {
         <div className="companylist">
           {firstlist.map((company,idx)=>{
             return(
-              <div className="main-company-card">
+              <div className="main-company-card" onClick={()=>{
+                navigate(`/detailcompany/${company.postingid}`, { state: {company} });
+              }}>
                 <img src={company.image? company.image[0] : company1} className="main-company-img"/>
                 <div className="main-company-description">
                   <div className="wrap">
@@ -106,7 +108,9 @@ function Main() {
         <div className="companylist">
           {secondlist.map((company,idx)=>{
             return(
-              <div className="main-company-card">
+              <div className="main-company-card" onClick={()=>{
+                navigate(`/detailcompany/${company.postingid}`, { state: {company} });
+              }}>
                 <img src={company.image? company.image[0] : company1} className="main-company-img"/>
                 <div className="main-company-description">
                   <div className="wrap">
@@ -133,7 +137,7 @@ function Main() {
         {secondjoblist.map((job,idx)=>{
             return(
               <div className="job-card" onClick={()=>{
-                navigate(`/detail`, { state: {job} });
+                navigate(`/detail/${job.postingid}`, { state: {job} });
               }}>
                 <img src={job.thumbnail? job.thumbnail:defaultjob} className="job-img"/>
                 <div className="card-text-wrap">
