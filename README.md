@@ -1,68 +1,91 @@
-[팀원 정보](https://www.notion.so/f25898987f3045db9ebbe15ebfaf4cc2)
+<h1 align="left"><br/>원티드 클론 프로젝트</h1>
+<br>
+<p align='center'>
+<img width='50%' src='https://www.venturesquare.net/wp-content/uploads/2022/02/%EC%9B%90%ED%8B%B0%EB%93%9C%EB%9E%A9-789x404.jpg'>
+</p>
+<br>
 
-[팀전체 To - do](https://www.notion.so/ec44bffbf6334825aa1b043dff79e579)
+## 📌 바로가기
+- 사이트 바로가기 : 
+- 프론트엔드 GitHub Repository : https://github.com/itsstacy/wanted-clone
+- 백엔드 GitHub Respository : https://github.com/HayeonKimm/backend-clonePro
+- 시연 영상 보러가기: 
 
-## 구현 예정 화면
+<br>
 
----
+## 👨‍💻 프로젝트 기간 및 참여인원
+2022.06.17.(금) ~ 2022.06.23.(목)</br>
 
-1. 메인 화면 (채용 정보 표시)
-2. 채용 상세 페이지
-3. 커뮤니티 (실시간 채팅 기능 추가)
-4. 기업 서비스 (회사 등록 페이지)
-5. 채용공고 등록 페이지
 
-![메인화면 (채용공고 및 회사정보 표시)](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/15dfee68-7a41-4c2d-bb99-fded2b9d3eda/Untitled.png)
+| Name     | GitHub                             | Position  |
+| -------- | ---------------------------------- | --------- |
+| 조세림     |  https://github.com/selim-jo       | 백엔드 |
+| 전영준     |  https://github.com/jyj9784        | 백엔드 |
+| 김하연     |  https://github.com/HayeonKimm     | 백엔드 |
+| 권지은     |  https://github.com/itsstacy       | 프론트 |
+| 최서우     |  https://github.com/zerovodka      | 프론트 |
 
-메인화면 (채용공고 및 회사정보 표시)
+<br>
 
-![채용공고 상세페이지](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/76d23005-766c-427b-bd38-58456bfa4fb8/Untitled.png)
+## 프로젝트 구조
 
-채용공고 상세페이지
+<details markdown="1">
+<summary>구현 화면</summary>
 
-![커뮤니티  (실시간 채팅창)](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/476761e9-e935-473c-a262-8a8c2137eba6/Untitled.png)
+![서비스 아키텍처 (1)]()
+</details>
 
-커뮤니티  (실시간 채팅창)
+<details markdown="2">
+<summary>API 명세서</summary>
+  
+[https://www.notion.so/4-e1ca3a0316e4459d80cc08793e2d1556](https://www.notion.so/acb268ccf9ab4d139f62f086b8d3e175?v=616957780f1944fbb7dfbd57061a384e])
 
-![회사정보 등록, 채용공고 등록 페이지](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bb186f9e-ace4-4c7d-90ae-abe786a05ed4/Untitled.png)
+</details>
 
-회사정보 등록, 채용공고 등록 페이지
+## ⚙️ 주요 구현 기능
 
-[기능 및 페이지](https://www.notion.so/e3148c1a7228420b84be3250975e5e1a)
 
-[원티드 API 설계](https://www.notion.so/acb268ccf9ab4d139f62f086b8d3e175)
+  
 
-*개인회원이 지원한 채용공고가 삭제 or 수정될 경우 마이페이지에 연동되어 표시되게
 
-## 기존 원티드 사이트와 다른점
 
----
 
-- 회원가입
-    - 회원가입 시 프론트엔드/백엔드 선택 옵션을 추가
-- 커뮤니티 페이지
-    - 게시판 형식이 아닌 실시간 채팅창으로 구성
-    
-- 나중에 추가하고 싶은 기능(우선순위)
-    1. 소셜 로그인 - 김하연
-    2. 이메일 인증 - 조세림
-    3. 실시간 채팅 - 전영준
-    4. 북마크 기능
-    
 
-[프론트 README.md](https://www.notion.so/README-md-014828f7d4794e96be7cdc7e71d050c1)
+## 기술스택
+> #### 프론트엔드
+<p align="center">
+<img src="https://img.shields.io/badge/html-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+<img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black">
+<img src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=Redux&logoColor=white">
+<br>
+<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/Socket.io-010101?style=for-the-badge&logo=Socket.io&logoColor=white">
+<img src="https://img.shields.io/badge/S3-569A31?style=for-the-badge&logo=S3&logoColor=white">
+<img src="https://img.shields.io/badge/axios-007CE2?style=for-the-badge&logo=axios&logoColor=white">
+<img src="https://img.shields.io/badge/styledcomponents-DB7093?style=for-the-badge&logo=styledcomponents&logoColor=white">
+<br>
+<br>
+<br>
 
-## 트러블 슈팅
+> #### 백엔드
+  
+  <p align="center">
+    <img src= "https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+  <img src="https://img.shields.io/badge/Node-42443b?style=for-the-badge&logo=Node.js&logoColor=green">
+  <img src="https://img.shields.io/badge/Express-7b7b7b?style=for-the-badge&logo=Express&logoColor=black">
+  <img src="https://img.shields.io/badge/MongoDB-3e2d1d?style=for-the-badge&logo=MongoDB&logoColor=green">
+  <br>
+  <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+  <img src="https://img.shields.io/badge/amazonaws-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white">
+  <img src="https://img.shields.io/badge/Socket.io-010101?style=for-the-badge&logo=Socket.io&logoColor=white">
+  <img src="https://img.shields.io/badge/prettier-192932?style=for-the-badge&logo=prettier&logoColor=black">
+  <img src="https://img.shields.io/badge/swagger-80b43c?style=for-the-badge&logo=swagger&logoColor=black">
+    <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
+    <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white">
+    <img src="https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white">
+<img src="https://img.shields.io/badge/passport-33D875?style=for-the-badge&logo=passport&logoColor=white">
 
----
 
-- 프론트엔드
-    - 주소 검색 시 모달창 구현을 하였는데, 검색 완료 후 모달이 남아있어서 일단 뺐습니다.
-- 백엔드
-    - 기업회원과 개인회원의 db collection이 달라 두 userid에 대한 중복을 고려하지 않았으나 로그인에서 오류 발생 
-    → 해결법: 기업회원 userid와 개인회원 userid 중복검사 코드 작성
-    - 기업회원 작성자가 게시물을 여러 개 올리려고 할 때 오류 발생 
-    → 해결법: mongodb 해당 컬렉션 삭제하고 다시 실행하니 동작함(But, 이 부분은 mongodb 자체문제인지 코드문제인지 더 생각해봐야함)
-    - socket.io를 이용한 채팅을 분리하여 구현 후에 프로젝트에 넣으려고 했는데, 아예 뜨지 않음.  [Socket.io](http://Socket.io) 관련 개념을 참고하여 코드 수정하여 에러 고침. 이후 코드에 들어갈 이름에 대해 DB에서 유저 정보를 조회하여 삽입할 예정.
-    - 인증안된 토큰입니다.
-    - split
+<br>
