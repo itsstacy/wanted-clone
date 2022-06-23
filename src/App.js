@@ -11,6 +11,7 @@ import Login from "./pages/Login";
 import Signupcompany from "./pages/Signupcompany";
 import Detailcompany from "./pages/Detailcompany";
 import Community from "./pages/Community";
+import Mypage from "./pages/Mypage";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/signupcompany" element={<Signupcompany />} />
           <Route path="/detailcompany" element={<Detailcompany />} />
           <Route path="/community" element={<Community />} />
+          <Route path="/mypage" element={<Mypage />} />
         </Routes>
       </div>
       <Footer />

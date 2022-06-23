@@ -686,6 +686,122 @@
 }
 /* Signup / Login End */
 
+/* Mypage */
+.mypage-wrap{
+  padding-bottom: 100px;
+  margin: 0 auto;
+  width: 90%;
+  position: relative;
+  max-width: 1060px;
+  /* background-color: #006bee; */
+}
+.mypage-wrap-bookmark-title > h2 > p{
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  padding: 50px 0 20px;
+}
+.mypage-bookmark-lists{
+  margin: -10px;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+.mypage-bookmark-list{
+  width: 25%;
+  padding: 10px;
+  list-style: none;
+  vertical-align: top;
+}
+@media (min-width: 768px) and (max-width: 991px){
+  .mypage-bookmark-list{
+    width: 50%;
+  }
+}
+.mypage-bookmark-img{
+  padding-bottom: 75%;
+  position: relative;
+  background-size: cover;
+  background-position: 50%;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 0 0 1px rgb(0 0 0 / 10%);
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 10%);
+}
+.mypage-bookmark-btn{
+  background: none;
+  padding: 8px 6px;
+  width: 42px;
+  height: 42px;
+  top: 0;
+  right: 0;
+  flex-direction: row;
+  z-index: 1;
+  justify-content: flex-end;
+  border-radius: 3px;
+  position: absolute;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  -ms-flex-pack: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -ms-flexbox;
+  border: 0;
+  display: flex;
+}
+.mypage-bookmark-body{
+  padding: 14px 0;
+}
+.mypage-bookmark-position{
+  position: relative;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  max-height: 2.4em;
+  overflow: hidden;
+  text-align: left;
+  word-break: break-word;
+}
+.mypage-bookmark-company-name{
+  color: #333;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: normal;
+  text-align: left;
+  word-break: break-word;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top: 10px;
+}
+.mypage-bookmark-company-location{
+  font-weight: 400;
+  color: #999;
+  font-size: 14px;
+  line-height: normal;
+  text-align: left;
+  word-break: break-word;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top: 10px;
+}
+.mypage-bookmark-reward{
+  margin-top: 10px;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  word-break: break-word;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 /* Company Detail */
 .detailcompany{
   position: relative;

@@ -11,7 +11,7 @@ function Login() {
   function LoginPost() {
     axios({
       method: "post",
-      url: `http://3.36.74.108/api/users/login`,
+      url: `http://hayeon-sum.shop/api/users/login`,
       data: {
         userid: userid.current.value,
         password: password.current.value,
@@ -51,7 +51,7 @@ function Login() {
   function GoogleLogin() {
     axios({
       method: "get",
-      url: `http://13.209.35.101:3000/auth/google`,
+      url: `http://hayeon-sum.shop/auth/google`,
       // headers: {
       //   origin: "http://13.209.35.101:3000/auth/google",
       //   credentials: "include",

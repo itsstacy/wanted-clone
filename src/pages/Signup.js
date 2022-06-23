@@ -67,7 +67,7 @@ function Signup() {
   function LoginPost() {
     axios({
       method: "post",
-      url: "http://3.36.74.108/api/users/signup",
+      url: "http://hayeon-sum.shop/api/users/signup",
       data: {
         userid: userid.current.value,
         password: password.current.value,
