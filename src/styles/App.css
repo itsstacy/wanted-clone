@@ -1167,6 +1167,9 @@
 /* COMPANY - MYPAGE */
 .mypage-container{
   background-color: var(--background-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .mypage-header{
@@ -1194,7 +1197,7 @@
 }
 
 .mypage-content{
-  min-height: 100vh;
+  
   max-width: var(--container-width);
   width: 100%;
   display: flex;

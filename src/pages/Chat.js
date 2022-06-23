@@ -7,7 +7,8 @@ function Chat({ socket, username, room, emoji, profileimage}) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
-
+  const [realtime, setRealtime] = useState([]);
+  const [complete, setComplete] = useState(false);
 
   const sendMessage = async () => {
     if (currentMessage !== "") {
@@ -24,12 +25,15 @@ function Chat({ socket, username, room, emoji, profileimage}) {
 
       await socket.emit("send_message", messageData);
       setMessageList((list) => [...list, messageData]);
+      setRealtime((list) => [...list, messageData]);
       setCurrentMessage("");
+      setComplete((element) => !element);
     }
     
   };
 
   useEffect(() => {
+    setRealtime([]);
     const SERVER_URL = "http://hayeon-sum.shop/api";
     // const access_token = localStorage.getItem("token");
     // console.log(access_token);
@@ -42,11 +46,6 @@ function Chat({ socket, username, room, emoji, profileimage}) {
       console.log(messageList);
     });
 
-    socket.on("receive_message", (data) => {
-      console.log(data);
-      setMessageList((list) => [...list, data]);
-    }); 
-    
     const filteredList = messageList.filter((message, index) =>{
       if (message.room == room) {
         return true;
@@ -54,8 +53,25 @@ function Chat({ socket, username, room, emoji, profileimage}) {
     })
     console.log(filteredList);
     setFilteredList(filteredList);
-  }, [socket, room, currentMessage]);
 
+  }, [room]);
+
+
+  useEffect(() => {
+    socket.on("receive_message", (data) => {
+      setRealtime((list) => [...list, data]);
+      console.log(realtime);
+      // const filteredRealtimeList = realtime.filter((message, index) =>{
+      //   if (message.room == room) {
+      //     return true;
+      //   }
+      // })
+      // setFiltedRealtimeList(filteredRealtimeList);
+      // console.log(filteredRealtimeList);
+    })
+  
+  }, [socket, complete]);
+  
 
   return (
     <>
@@ -105,6 +121,28 @@ function Chat({ socket, username, room, emoji, profileimage}) {
               </div>
             );
           })}
+          {realtime.map((messageContent) => {
+            return (
+              <div
+                key={messageContent._id}
+                className="message"
+                id={username === messageContent.author ? "you" : "other"}
+              >
+                <div>
+                  <div className="message-meta">
+                    <img id="image" src ={messageContent.image} className='chat-profile-image'/>
+                    <p id="author">{messageContent.author}</p>
+                    <p id="time">{messageContent.time}</p>                    
+                  </div>
+                  <div className="message-content">
+                    <p>{messageContent.message}</p>
+                  </div>
+                  
+                </div>
+              </div>
+            );
+          })}
+          
         </ScrollToBottom>
       </div>
     </>

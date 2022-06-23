@@ -60,7 +60,7 @@ function Main() {
           {firstjoblist.map((job,idx)=>{
             return(
               <div className="job-card" onClick={()=>{
-                navigate(`/detail`, { state: {job} });
+                navigate(`/detail/${job.postingid}`, { state: {job} });
               }}>
                 <img src={job.thumbnail? job.thumbnail:defaultjob} className="job-img"/>
                 <div className="card-text-wrap">

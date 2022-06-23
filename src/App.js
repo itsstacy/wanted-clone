@@ -21,7 +21,7 @@ function App() {
       <div className="background">
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/detail/" element={<Detail />} />
+          <Route path="/detail/:id" element={<Detail />} />
           <Route path="/newjob" element={<Newjob />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />

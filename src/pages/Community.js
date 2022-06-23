@@ -109,9 +109,5 @@ const RoomCategory = styled.div`
   &:hover {
     background-color: var(--background-color);
   }
-  /* &:focus {
-    border: 1px solid var(--box-border);
-    color: var(--primary-color); */
-  }
 
 `
