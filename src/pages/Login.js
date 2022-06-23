@@ -51,7 +51,7 @@ function Login() {
   function GoogleLogin() {
     axios({
       method: "get",
-      url: `http://13.209.35.101:3000/auth/google`,
+      url: `http://hayeon-sum.shop/auth/google`,
       // headers: {
       //   origin: "http://13.209.35.101:3000/auth/google",
       //   credentials: "include",

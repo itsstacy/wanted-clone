@@ -38,7 +38,7 @@ function Detailcompany() {
   useEffect(() => {
     axios({
       method: "get",
-      url: "http://hayeon-sum.shop/api/postings",
+      url: "http://hayeon-sum.shop:3000/api/postings",
     })
       .then((response) => {
         console.log(response);
