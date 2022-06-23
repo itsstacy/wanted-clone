@@ -100,7 +100,7 @@ function Signup() {
           <div className="signup-msg-slider"></div>
           <div className="signup-main">
             <div className="signup-form">
-              <div className="signup-input">
+              <div className="signup-input topmg30">
                 <label for="position" className="form-label">
                   포지션
                 </label>
@@ -192,7 +192,7 @@ function Signup() {
                 가입하기
               </button>
               <div className="signup-footer">
-                <span>
+                <span className="topmg10">
                   가입 시, 4조가 제공하는 서비스를 모두이용하실 수 있습니다.
                   개인정보취급방침에 동의합니다.
                 </span>

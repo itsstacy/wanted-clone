@@ -12,6 +12,9 @@ import Signupcompany from "./pages/Signupcompany";
 import Detailcompany from "./pages/Detailcompany";
 import Community from "./pages/Community";
 import Mypage from "./pages/Mypage";
+import Companypage from "./pages/Companypage";
+import Edit from "./pages/Edit";
+
 
 function App() {
   return (
@@ -20,7 +23,7 @@ function App() {
       <div className="background">
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/detail" element={<Detail />} />
+          <Route path="/detail/" element={<Detail />} />
           <Route path="/newjob" element={<Newjob />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
@@ -28,6 +31,8 @@ function App() {
           <Route path="/detailcompany" element={<Detailcompany />} />
           <Route path="/community" element={<Community />} />
           <Route path="/mypage" element={<Mypage />} />
+          <Route path="/companypage" element={<Companypage/>} />
+          <Route path="/edit" element={<Edit />} />
         </Routes>
       </div>
       <Footer />

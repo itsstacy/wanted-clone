@@ -287,7 +287,7 @@ function Signupcompany() {
           <div className="signup-msg-slider"></div>
           <div className="signup-main">
             <div className="signup-form">
-              <div className="signup-input">
+              <div className="signup-input topmg30">
                 <label for="email" className="form-label">
                   이메일
                 </label>

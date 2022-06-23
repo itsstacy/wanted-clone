@@ -90,7 +90,7 @@ function Login() {
           <div className="signup-msg-slider"></div>
           <div className="signup-main">
             <div className="signup-form">
-              <div className="signup-input">
+              <div className="signup-input topmg30">
                 <input
                   id="email"
                   className="signup-input-form"
@@ -117,13 +117,13 @@ function Login() {
               <button className="signup-btn-company" onClick={GoogleLogin}>
                 <img
                   src="https://developers.google.com/identity/images/g-logo.png?hl=ko"
-                  style={{ width: "16px" }}
+                  style={{ width: "16px" ,marginRight: "3px" }}
                 ></img>
                 구글 계정으로 로그인하기
               </button>
               {/* </div> */}
 
-              <p className="login-to-signup">
+              <p className="login-to-signup topmg10">
                 <span
                   onClick={() => {
                     navigate("/signup");
@@ -139,7 +139,7 @@ function Login() {
                   기업 회원 가입
                 </span>
               </p>
-              <div className="signup-footer">
+              <div className="signup-footer topmg10">
                 <span>
                   가입 시, 4조가 제공하는 서비스를 모두이용하실 수 있습니다.
                   개인정보취급방침에 동의합니다.

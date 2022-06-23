@@ -25,7 +25,6 @@ function Navbar() {
         <div className="mainbar">
           <div className="mainbar-nav">
             <div className="mainbar-nav-box">
-              <span class="material-icons">menu</span>
               <img
                 src={logo}
                 className="main-logo"
@@ -54,7 +53,7 @@ function Navbar() {
               <div className="void"></div>
             </div>
             <div className="mainbar-nav-box">
-              <span class="material-icons">search</span>
+
               {/* login before after */}
               <div
                 className="navbar-menu"
@@ -66,7 +65,11 @@ function Navbar() {
               </div>
 
               <div className="divider"></div>
-              <button className="button-company-service">기업서비스</button>
+              <button 
+              className="button-company-service"
+              onClick={()=>{
+                navigate("/login");
+              }}>기업서비스</button>
             </div>
           </div>
         </div>
@@ -74,7 +77,7 @@ function Navbar() {
         <div className="mainbar">
           <div className="mainbar-nav">
             <div className="mainbar-nav-box">
-              <span class="material-icons">menu</span>
+
               <img
                 src={logo}
                 className="main-logo"
@@ -100,10 +103,18 @@ function Navbar() {
               >
                 커뮤니티
               </div>
+              <div
+                className="navbar-menu"
+                onClick={() => {
+                  navigate("/companypage");
+                }}
+              >
+                기업서비스
+              </div>
               <div className="void"></div>
             </div>
             <div className="mainbar-nav-box">
-              <span class="material-icons">search</span>
+
               {/* login before after */}
               <div className="navbar-menu" onClick={Logout}>
                 로그아웃
@@ -115,7 +126,7 @@ function Navbar() {
                   navigate("/newjob");
                 }}
               >
-                채용 공고 등록
+                채용공고 등록
               </button>
               {/* (iscompany ? (
           <button className="button-company-service">기업회원입니다</button>
@@ -129,7 +140,6 @@ function Navbar() {
         <div className="mainbar">
           <div className="mainbar-nav">
             <div className="mainbar-nav-box">
-              <span class="material-icons">menu</span>
               <img
                 src={logo}
                 className="main-logo"
@@ -155,10 +165,17 @@ function Navbar() {
               >
                 커뮤니티
               </div>
+              <div
+                className="navbar-menu"
+                onClick={() => {
+                  navigate("/mypage");
+                }}
+              >
+                마이페이지
+              </div>
               <div className="void"></div>
             </div>
             <div className="mainbar-nav-box">
-              <span class="material-icons">search</span>
               {/* login before after */}
               <div className="navbar-menu" onClick={Logout}>
                 로그아웃
